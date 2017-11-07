@@ -8,7 +8,6 @@ module.exports = {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
     filename: 'build.js',
-    // filename: 'vue-previewer.js',
     library: 'VuePreviewer',
     libraryTarget: 'umd',
     umdNamedDefine: true 
