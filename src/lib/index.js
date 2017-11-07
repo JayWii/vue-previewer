@@ -1,6 +1,6 @@
 import VuePreviewer from "./preview.vue"
 
-const preview = {
+export default {
   install: function(Vue, options) {
     const LOGIC_EVENT_BUS = new Vue({
       data() {
@@ -91,7 +91,3 @@ const preview = {
     Vue.component(VuePreviewer.name, VuePreviewer)
   }
 }
-if (typeof window !== "undefined" && window.Vue) {
-  window.Vue.use(preview)
-}
-export default preview
