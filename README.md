@@ -8,7 +8,6 @@
 2. 当 `removeInside` 为 `false` 时：`data`将返回所删元素的索引`index`,所删元素`removeTarget`,和原始列表`fileList`，此时应在回调函数内进行删除操作，并重新对`imgs`赋值；
 
 文档：<a href="https://github.com/JayWii/vue-previewer">https://github.com/JayWii/vue-previewer</a>  
-demo：<a href="https://github.com/JayWii/vue-previewer" target="_blank">https://cgygd.github.io/vue2-countdown/example/index.html</a>
 
 ## Install
 ```
@@ -93,3 +92,11 @@ export default {
 1. **onRemove** - 删除之后的回调函数
     - **type**: Function
     - **required** : false
+
+
+### License
+ MIT
+
+### 致谢
+
+> vue-picture-preview
