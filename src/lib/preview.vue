@@ -14,10 +14,10 @@
           borderRadius: `${radius}px`
         }">
         <div class="operates" :class="{ 'cur' : src.focus }" v-if="removeEnable">
-          <div class="operate delete-btn" :style="{ borderWidth: `${width/2}px` }"></div>
-          <div class="operate-icon delete-icon" @click="removePic(index)"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACEklEQVRoQ+2Y7TEEQRCG3zcCZEAEiICLABE4GRABMiACMkAETgROBE4EiKBVq92r3am93fnemqqdv9Mz089093RPE4UPFq4/JoCxLThZYLJA4A1EdSERObLU54vkylK2VywagIjMATw4KLVD8sdBvlM0JsAxgGcAWxZKfZA8sJAbFIkGMHhSIgErABHR2zpJpEPftvdDbmYLoK4xBsAVybs+QlsA9e9LANsZraABPo9igYxKOx9lZQHnXTMucAYQEXWjVwBLkhdNXUVkF8B7NTfbMLcgebZh7tncc+gufAA0HhQAJFvrRcR3bp0EzT1LAbgBcN11KUkBABySXNaHBFigBvgl6fTSBbkQgBnJRUSAN5LqhtbDB0AD9bM6oTwAVVxEZAJoOImI1DGQ3oUSWeARwDmAYgH0IdDfXHaAVrUY8IyOBnBLUv33f0QA0Ppfq17r4fyMGjEQG6C1nw2FL0Bt8gmgsmjnhZRkAc3smuGLdaE6s2cHeCF5GuEVGg2glXgCntEaYLALYcZF6CsUG6BV3aYM4s7apfov69zKTEiNOf1Lr5NfX22VEsC7ejSVqsC+u8rzHADafNobaj71KSIi+gg85QZottK1zx/S629+IZ1b7l5BXPmtfub3bcxsKeOcA3Rfb4AKQivHdR6wVNQUU+tpQ0sbyM4jCMD5tAQLJoAEl+q05WQBp+tKIFy8Bf4AaBbAQGHQM0YAAAAASUVORK5CYII=" alt=""></div>
-          <div class="operate preview-btn" :style="{ borderWidth: `${width/2}px` }"></div>
-          <div class="operate-icon preview-icon"><img v-preview="src.src" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAECklEQVRoQ9WZi1EUQRCGuyNQIhAi0AyUCIQI1AjECIQIxAiUCNQIhAiECMQIxAja+q56tobZmd3p3avi6Kqr4mAe/Xf//RpUHrnoWv3NbF9Envk5L0Tk2n++UdW7tefP7Q8DMLOnIvJaRF6JyJGI8L0ltyLynY+qXs0ps+Tv3QBc8fcicjKj9BSYD6oKoK1JFwAzw9JfFipeKnspIgBJVFsFZhaAmaH421W3jDcTG4D4uvbcJgCnzDfneu2ef4nfInKnqlhWfB/BTHDjOeKlJaeqerYGxBSAnw3lUfyk13oO6FREiJ+avOs9q7a5CsDMzhsXXrjy4fTo6ZYAfl5R5DB5MOqNEQAPWKhTCpwF2GJxb8D7klYY5GBJ3agB+O38zRU9U1Vo0BQze+mU+zNHCTMjA5WeuFDVcLK4B8DMyPGfCi2bBzdqw5WqUuSmwFL8AJEqeFqLFyh+3VIC+FvkegJ2v+ZaMyPTQDWyTS6zAFjcoGrYCwMAM8NqZJ5Z6rjyrE1tBG3CebTKmhmpF+olIR3vdZtfRHIAtcyzV1rfaUOcoHwopZaKmRmcp1DmEspIOYAyeH+oKoXonpgZWeSN//I4avX8MDcGtM3ls6oSi12SA7Bixyhtei4HKBK6qKVNhUZdMZTO2wBoWGLkyiJLjejVZbKxR0vqLgJQC+AagBR0DCtkodViZtSXj9lBoUBOHogCCKe7CQqVAERVZ7vkkkJY81dxSc0DrCP73EYLTgBAyLtTQbwqw/RyaytB7IFcZqGt0WQKjJl1pe/WGbkHaHXzLhGaHPRacsk6r+gldUPzQQ5gdVWMgmjMHaH0nAMgOMuqeKmqh1HFetYXRTFtCQUwm8puNG8T0qEhl/Yo7zFHJ1u2KuG7SgC0xqlVSLowLZFSt/IM4srX6Bq2/sgDfnitK2XIAERo2Kh5o9GBsjTUhd4rZPlF3hfRMpQj32pPmBkvE7W5enHKbr1KUHEB8aRiRUo/nWj3y4QHLKPqqD0XkYE6ZsYa5u/us6feheiPqA01EFxAwGO5ZmyYGXUFpVvD+g0PASicdbqcB526QEw2TV5oWp5IziEu+HAhl6eBPvVNrcTEGHrkygMyf8rpBjHb9U3ERG/GrK0bhiGfxVG+fKbvAjELIN3u2QP+l08hESBYnffQ9I5aS6f5ebMgugFkQJhXubj2RFgDw+CPwrxabBSfKGS1/ZMgwgAyBXA53KX4lXxPcXHdGvon6kEIxGIAEd601m4DxIMCmGgrWphHdHpwAGtB7ASABSD4r+dxtZnbBreXnhGMic3gszMeKOpN+V5as8mme905AAE67aYHOj0xPDzvpAcyEBRKut68Ix6awJ0L4hrRvZmkw6XiU9mHduRRAJjLaP8BLTrrQH3guskAAAAASUVORK5CYII=" alt=""></div>  
+          <div class="operate delete-btn" :style="{ borderWidth: `${width/2}px`, borderColor: `transparent transparent ${deleteBtnColor} ${deleteBtnColor}` }"></div>
+          <div class="operate-icon delete-icon" @click="removePic(index)"><img src="./img/delete.svg" alt=""></div>
+          <div class="operate preview-btn" :style="{ borderWidth: `${width/2}px`, borderColor: `${previewBtnColor} ${previewBtnColor} transparent transparent` }"></div>
+          <div class="operate-icon preview-icon"><img v-preview="src.src" src="./img/preview.svg" alt=""></div>  
         </div>
         <div class="preview-mask" v-if="!removeEnable" v-preview="src.src"></div>
       </li>
@@ -25,23 +25,23 @@
     
     <!-- 大图预览 -->
     <transition name="fade">
-      <div class="lg-preview-wrapper" v-show="preview.show" @click="leave"> 
-        <div class="lg-preview-loading" v-show="preview.loading"><div></div></div>
+      <div class="preview-wrapper" v-show="preview.show" @click="leave"> 
+        <div class="preview-loading" v-show="preview.loading"><div></div></div>
         <img 
-          class="lg-preview-img" 
+          class="preview-img" 
           v-if="preview.current.src" 
           :src="preview.current.src"
           :alt="preview.current.title"
           v-show="!preview.loading"
         >
-        <div class="lg-preview-title" v-if="preview.isTitleEnable&&preview.current.title" v-show="!preview.loading">
+        <div class="preview-title" v-if="preview.isTitleEnable&&preview.current.title" v-show="!preview.loading">
           {{preview.current.title}}
         </div>
-        <div class="lg-preview-nav-left" v-if="preview.isHorizontalNavEnable" v-show="!preview.loading">
-          <span class="lg-preview-nav-arrow" @click="preAction" ></span>
+        <div class="preview-nav-left" v-if="preview.isHorizontalNavEnable" v-show="!preview.loading">
+          <span class="preview-nav-arrow" @click="preAction" ></span>
         </div>
-        <div class="lg-preview-nav-right" v-if="preview.isHorizontalNavEnable" v-show="!preview.loading">
-          <span class="lg-preview-nav-arrow" @click="nextAction"></span>
+        <div class="preview-nav-right" v-if="preview.isHorizontalNavEnable" v-show="!preview.loading">
+          <span class="preview-nav-arrow" @click="nextAction"></span>
         </div>
       </div>
     </transition>
@@ -50,7 +50,7 @@
 
 <script>
 export default {
-  name: 'vue-previewer',
+  name: "vue-previewer",
   props: {
     imgs: {
       type: [Array],
@@ -80,61 +80,73 @@ export default {
       type: [Boolean],
       default: true
     },
+    deleteBtnColor: {
+      type: [String],
+      default: '#e12e2e'
+    },
+    previewBtnColor: {
+      type: [String],
+      default: '#3caaff'
+    },
     type: {
       type: [String],
-      default: 'url' // url则imgs的值为图片链接，file则imgs的值为图片文件
+      default: "url" // url则imgs的值为图片链接，file则imgs的值为图片文件
     }
   },
-  data () {
+  data() {
     return {
       srcs: []
     }
   },
-  mounted () {
+  mounted() {
     this.initSrcs()
   },
   watch: {
-    imgs () {
+    imgs() {
       this.initSrcs()
     }
   },
   computed: {
-    preview () {
+    preview() {
       return window.LOGIC_EVENT_BUS.LOGIC_PREVIEW
     }
   },
   methods: {
+    tagImgs (arr) {
+      let result = []
+      for (var i = 0; i < arr.length; i++) {
+        let obj = {
+          sort: i,
+          file: arr[i],
+          src: '',
+          focus: false
+        }
+        result.push(obj)
+      }
+      return result
+    },
     initSrcs () {
-      if (this.type === 'file') {
+      let srcs = this.tagImgs(this.imgs)
+      console.log()
+      if (((this.type === 'file') && (this.imgs.length > 0) && (typeof(this.imgs[0]) === 'object')) || (((this.type === 'url')) && (typeof(this.imgs[0]) === 'object'))) {
         let files = this.imgs
         if (window.FileReader) {
-          let srcs = []
           for (var i = 0; i < files.length; i++) {
             let fr = new FileReader()
-            let obj = {
-              file: files[i],
-              src: '',
-              focus: false
-            }
-            fr.onloadend = (e) => {
-              obj.src = e.target.result
-              srcs.push(obj)
-            }
+            fr.onloadend = function (i) {
+              return e => {
+                srcs[i].src = e.target.result
+              }
+            }(i)
             fr.readAsDataURL(files[i])
           }
-          this.srcs = srcs
         }
       } else {
-        let srcs = this.imgs.map((img) => {
-          let obj = {
-            file: img,
-            src: img,
-            focus: false
-          }
-          return obj
-        })
-        this.srcs = srcs
+        for (var i = 0; i < this.imgs.length; i++) {
+          srcs[i].src = this.imgs[i]
+        }
       }
+      this.srcs = srcs
     },
     __dispatch (name, res, data) {
       this.$emit && this.$emit(name, res, data)
@@ -148,40 +160,40 @@ export default {
         // 由父组件来删
         removeTarget = this.srcs[index].src
       }
-      let imgList = this.srcs.map((img) => {
+      let imgList = this.srcs.map(img => {
         return img.file
-      })
+      });
       let data = {
         index: index,
         removeTarget: removeTarget,
         fileList: imgList
-      }
-      this.__dispatch ('onRemove', 'success', data)
+      };
+      this.__dispatch("onRemove", "success", data)
     },
     focus (src) {
       if (this.removeEnable) {
-        this.srcs.forEach((item) => {
+        this.srcs.forEach(item => {
           item.focus = false
-        })
+        });
         src.focus = true
-        // window.clearTimeout(window.timer)
-        // window.timer = setTimeout(() => {
-        //   src.focus = false
-        // }, 3000)
+        window.clearTimeout(window.timer)
+        window.timer = setTimeout(() => {
+          src.focus = false
+        }, 3000)
       }
     },
-    leave(e) {
+    leave (e) {
       if (
         this.preview.show &&
-        e.target.className.indexOf("lg-preview-nav-arrow") != 0
+        e.target.className.indexOf("preview-nav-arrow") != 0
       ) {
         this.close()
       }
     },
-    close() {
+    close () {
       this.preview.show = false
     },
-    preAction() {
+    preAction () {
       this.preview.loading = true
       let index = this.preview.list.indexOf(this.preview.current)
       if (index === 0) {
@@ -198,7 +210,7 @@ export default {
         }, 500)
       }
     },
-    nextAction() {
+    nextAction () {
       this.preview.loading = true
       let index = this.preview.list.indexOf(this.preview.current)
       if (index === this.preview.list.length - 1) {
@@ -219,18 +231,67 @@ export default {
 }
 </script>
 <style scoped>
-ul, img {padding: 0;}
-.preview-list {box-sizing: border-box;overflow: hidden;}
-.preview-item {background-size: cover;background-repeat: no-repeat;background-position: center;float: left;position: relative;overflow: hidden;font-size: 0;cursor: pointer;}
-.operate{position: absolute;left: 0;top: 0;width: 0;height: 0;border-style: solid;}
-.operates, .preview-mask {width: 100%;height: 100%;opacity: 0;transition: .6s;pointer-events: none;overflow: hidden;}
-.operates.cur, .preview-mask {opacity: 1;pointer-events: inherit;}
-.delete-btn {border-color: transparent transparent #e12e2e #e12e2e;}
-.preview-btn {border-color: #3caaff #3caaff transparent transparent;}
-.operate-icon {position: absolute;width: 100%;height: 100%;}
-.operate-icon img {position: absolute;width: 50%;box-sizing: border-box;z-index: 1;}
-.delete-icon img {left: 0;bottom: 0;padding: 5%;}
-.preview-icon img {right: 2%;top: 2%;padding: 8%;}
+ul,
+img {
+  padding: 0;
+}
+.preview-list {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.preview-item {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  float: left;
+  position: relative;
+  overflow: hidden;
+  font-size: 0;
+  cursor: pointer;
+}
+.operate {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+.operates,
+.preview-mask {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 0.6s;
+  pointer-events: none;
+  overflow: hidden;
+}
+.operates.cur,
+.preview-mask {
+  opacity: 1;
+  pointer-events: inherit;
+}
+.operate-icon {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.operate-icon img {
+  position: absolute;
+  width: 50%;
+  box-sizing: border-box;
+  z-index: 1;
+}
+.delete-icon img {
+  left: 0;
+  bottom: 0;
+  padding: 5%;
+}
+.preview-icon img {
+  right: 2%;
+  top: 2%;
+  padding: 8%;
+}
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s;
@@ -239,8 +300,7 @@ ul, img {padding: 0;}
 .fade-leave-active {
   opacity: 0;
 }
-
-.lg-preview-wrapper {
+.preview-wrapper {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -251,15 +311,13 @@ ul, img {padding: 0;}
   background: rgba(0, 0, 0, 0.9);
   z-index: 10000;
 }
-
-.lg-preview-loading {
+.preview-loading {
   position: absolute;
   top: 45%;
   left: 50%;
   margin-left: -7.5px;
 }
-
-.lg-preview-loading > div {
+.preview-loading > div {
   background-color: #fff;
   width: 15px;
   height: 15px;
@@ -294,7 +352,7 @@ ul, img {padding: 0;}
   }
 }
 
-.lg-preview-img {
+.preview-img {
   max-width: 100%;
   max-height: 100%;
   display: block;
@@ -306,7 +364,7 @@ ul, img {padding: 0;}
   margin: auto;
 }
 
-.lg-preview-nav-arrow {
+.preview-nav-arrow {
   font-size: 3rem;
   position: absolute;
   top: 50%;
@@ -319,8 +377,8 @@ ul, img {padding: 0;}
   border-left: 2px solid #fff;
 }
 
-.lg-preview-nav-left,
-.lg-preview-nav-right {
+.preview-nav-left,
+.preview-nav-right {
   position: absolute;
   height: 100%;
   margin: 0.25rem;
@@ -330,31 +388,31 @@ ul, img {padding: 0;}
   transition: opacity 0.2s;
 }
 
-.lg-preview-nav-left .lg-preview-nav-arrow,
-.lg-preview-nav-right .lg-preview-nav-arrow {
+.preview-nav-left .preview-nav-arrow,
+.preview-nav-right .preview-nav-arrow {
   transition: background 0.3s;
 }
 
-.lg-preview-nav-left {
+.preview-nav-left {
   left: 0;
 }
-.lg-preview-nav-left .lg-preview-nav-arrow {
+.preview-nav-left .preview-nav-arrow {
   left: 0;
   margin-left: 2rem;
   transform: rotate(-45deg);
 }
 
-.lg-preview-nav-right {
+.preview-nav-right {
   right: 0;
 }
 
-.lg-preview-nav-right .lg-preview-nav-arrow {
+.preview-nav-right .preview-nav-arrow {
   right: 0;
   margin-right: 2rem;
   transform: rotate(135deg);
 }
 
-.lg-preview-title {
+.preview-title {
   position: absolute;
   bottom: 0;
   text-align: center;
@@ -368,17 +426,17 @@ ul, img {padding: 0;}
 }
 
 @media all and (max-width: 768px) {
-  .lg-preview-nav-left,
-  .lg-preview-nav-right {
+  .preview-nav-left,
+  .preview-nav-right {
     width: 5rem;
   }
-  .lg-preview-nav-arrow {
+  .preview-nav-arrow {
     font-size: 2.5rem;
   }
-  .lg-preview-nav-left .lg-preview-nav-arrow {
+  .preview-nav-left .preview-nav-arrow {
     margin-left: 0.5rem;
   }
-  .lg-preview-nav-right .lg-preview-nav-arrow {
+  .preview-nav-right .preview-nav-arrow {
     margin-right: 0.5rem;
   }
 }
