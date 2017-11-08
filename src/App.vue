@@ -2,8 +2,8 @@
   <div id="app">
     <vue-previewer 
       :imgs="imgs"
-      :width="100"
-      :height="100"
+      :width="800"
+      :height="800"
       :margin="10"
       :radius="5"
       :removeInside="true"
