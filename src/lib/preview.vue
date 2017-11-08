@@ -8,7 +8,7 @@
         @click="focus(src)"
         :style="{
           width: `${width}px`,
-          height: `${height}px`,
+          height: `${width}px`,
           backgroundImage: `url(${src.src})`,
           margin: `${margin}px ${margin}px 0 0`,
           borderRadius: `${radius}px`
@@ -60,10 +60,6 @@ export default {
       type: [Number],
       default: 80
     },
-    height: {
-      type: [Number],
-      default: 80
-    },
     margin: {
       type: [Number],
       default: 10
@@ -90,7 +86,7 @@ export default {
     },
     type: {
       type: [String],
-      default: "url" // url则imgs的值为图片链接，file则imgs的值为图片文件
+      default: 'url' // url则imgs的值为图片链接，file则imgs的值为图片文件
     }
   },
   data() {
