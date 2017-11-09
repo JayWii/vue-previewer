@@ -123,7 +123,6 @@ export default {
     },
     initSrcs () {
       let srcs = this.tagImgs(this.imgs)
-      console.log()
       if (((this.type === 'file') && (this.imgs.length > 0) && (typeof(this.imgs[0]) === 'object')) || (((this.type === 'url')) && (typeof(this.imgs[0]) === 'object'))) {
         let files = this.imgs
         if (window.FileReader) {
@@ -239,6 +238,7 @@ img {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-color: #f0f0f0;
   float: left;
   position: relative;
   overflow: hidden;
@@ -386,6 +386,7 @@ img {
 
 .preview-nav-left .preview-nav-arrow,
 .preview-nav-right .preview-nav-arrow {
+  cursor: pointer;
   transition: background 0.3s;
 }
 

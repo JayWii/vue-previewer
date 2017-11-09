@@ -1,6 +1,8 @@
 # vue-preview-deleter
 
-基于vue2.0的图片预览与删除组件  
+基于vue2.0的图片预览与删除组件 
+
+![img](https://github.com/JayWii/vue-previewer/blob/master/demo.gif)
 
 可以自定义删除图片的回调函数，在点击删除图片的操作时，回调函数将根据`removeInside`的值来返回不同的参数，参数包括操作结果 `result` 和 具体数据 `data`：
 
