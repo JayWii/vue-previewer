@@ -14,7 +14,6 @@
 ## Install
 ```
 npm install vue-preview-deleter --save
-
 ```
 
 ## Usage

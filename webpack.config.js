@@ -2,8 +2,8 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  entry: './src/main.js', // dev
-  // entry: './src/lib/index.js', // pack
+  // entry: './src/main.js', // dev
+  entry: './src/lib/index.js', // pack
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
@@ -29,6 +29,14 @@ module.exports = {
         }
       },
       {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader', 'postcss-loader']
+      },
+      {
+        test: /\.less$/,
+        use: ['style-loader', 'css-loader', 'less-loader']
+      },
+      {
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/
@@ -49,7 +57,7 @@ module.exports = {
   },
   devServer: {
     host: '0.0.0.0',
-    disableHostCheck: true, // 为了使用本机ip访问页面，关闭host检查
+    port: 99
   },
   performance: {
     hints: false

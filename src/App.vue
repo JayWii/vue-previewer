@@ -10,6 +10,7 @@
       deleteBtnColor="#e12e2e"
       previewBtnColor="#3caaff"
       type="url" 
+      @onClose="closeHandler"
       @onRemove="handleRemove">
     </vue-previewer>
     <!-- <input type="file" ref="file" @change="addFile"> -->
@@ -18,24 +19,28 @@
 </template>
 
 <script>
+
 export default {
   data() {
     return {
       // imgs: []
-      imgs: ['http://images.freeimages.com/images/small-previews/f2c/effi-1-1366221.jpg','http://images.freeimages.com/images/small-previews/eb9/amon-1405220.jpg','http://images.freeimages.com/images/small-previews/500/friend-s-dog-1542741.jpg']
+      imgs: ['https://farm4.staticflickr.com/3894/15008518202_b016d7d289_b.jpg','https://farm6.staticflickr.com/5584/14985868676_4b802b932a_b.jpg','https://farm4.staticflickr.com/3920/15008465772_383e697089_b.jpg']
     }
   },
   methods: {
+    closeHandler () {
+      console.log('cloooooose')
+    },
     addImg () {
-      this.imgs.push('http://images.freeimages.com/images/small-previews/f2c/effi-1-1366221.jpg')
+      this.imgs.push('https://farm4.staticflickr.com/3894/15008518202_b016d7d289_b.jpg')
     },
     addFile () {
       this.imgs.push(this.$refs.file.files[0])
     },
-    handleRemove (res, data) {
-      console.log(res, data)
+    handleRemove (fileList, index) {
+      console.log(fileList, index)
       // this.imgs.splice(data.index, 1)
-      this.imgs = data.fileList
+      this.imgs = fileList
     }
   }
 }
