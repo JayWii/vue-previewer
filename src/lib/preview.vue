@@ -118,26 +118,30 @@ export default {
       return result
     },
     initSrcs () {
-      let srcs = this.tagImgs(this.imgs)
-      if (((this.type === 'file') && (this.imgs.length > 0) && (typeof(this.imgs[0]) === 'object')) || (((this.type === 'url')) && (typeof(this.imgs[0].src) === 'object'))) {
-        let files = this.imgs
-        if (window.FileReader) {
-          for (var i = 0; i < files.length; i++) {
-            let fr = new FileReader()
-            fr.onloadend = function (i) {
-              return e => {
-                srcs[i].src = e.target.result
-              }
-            }(i)
-            fr.readAsDataURL(files[i].src)
+      if (this.imgs.length > 0) {
+        let srcs = this.tagImgs(this.imgs)
+        if (((this.type === 'file') && (this.imgs.length > 0) && (typeof(this.imgs[0]) === 'object')) || (((this.type === 'url')) && (typeof(this.imgs[0].src) === 'object'))) {
+          let files = this.imgs
+          if (window.FileReader) {
+            for (var i = 0; i < files.length; i++) {
+              let fr = new FileReader()
+              fr.onloadend = function (i) {
+                return e => {
+                  srcs[i].src = e.target.result
+                }
+              }(i)
+              fr.readAsDataURL(files[i].src)
+            }
+          }
+        } else {
+          for (var i = 0; i < this.imgs.length; i++) {
+            srcs[i].src = this.imgs[i].src
           }
         }
+        this.srcs = srcs
       } else {
-        for (var i = 0; i < this.imgs.length; i++) {
-          srcs[i].src = this.imgs[i].src
-        }
+        return
       }
-      this.srcs = srcs
     },
     __dispatch (name, index, fileList, target) {
       this.$emit && this.$emit(name, index, fileList, target)
