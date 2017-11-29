@@ -20,7 +20,7 @@
     </ul>
     
     <!-- 大图预览 -->
-    <img-previewer :list="srcs" selector=".preview-img" :options="options" @on-close="closePic" :slotDesc="false" ref="previewer"></img-previewer>
+    <img-previewer :list="srcs" selector=".preview-img" :options="options" @on-close="closePic" ref="previewer"></img-previewer>
 
   </div>
 </template>
@@ -107,9 +107,11 @@ export default {
       for (var i = 0; i < arr.length; i++) {
         let obj = {
           sort: i,
-          file: arr[i],
+          file: arr[i].src,
           src: '',
-          focus: false
+          focus: false,
+          author: arr[i].author || '',
+          desc: arr[i].desc || ''
         }
         result.push(obj)
       }
@@ -117,7 +119,7 @@ export default {
     },
     initSrcs () {
       let srcs = this.tagImgs(this.imgs)
-      if (((this.type === 'file') && (this.imgs.length > 0) && (typeof(this.imgs[0]) === 'object')) || (((this.type === 'url')) && (typeof(this.imgs[0]) === 'object'))) {
+      if (((this.type === 'file') && (this.imgs.length > 0) && (typeof(this.imgs[0]) === 'object')) || (((this.type === 'url')) && (typeof(this.imgs[0].src) === 'object'))) {
         let files = this.imgs
         if (window.FileReader) {
           for (var i = 0; i < files.length; i++) {
@@ -127,12 +129,12 @@ export default {
                 srcs[i].src = e.target.result
               }
             }(i)
-            fr.readAsDataURL(files[i])
+            fr.readAsDataURL(files[i].src)
           }
         }
       } else {
         for (var i = 0; i < this.imgs.length; i++) {
-          srcs[i].src = this.imgs[i]
+          srcs[i].src = this.imgs[i].src
         }
       }
       this.srcs = srcs
@@ -147,14 +149,11 @@ export default {
       let removeTarget = null
       if (this.removeInside) {
         // 由预览组件来删
-        removeTarget = this.srcs.splice(index, 1)[0].file
-      } else {
-        // 由父组件来删
-        removeTarget = this.srcs[index].src
+        this.srcs.splice(index, 1)
+        this.imgs.splice(index, 1)
       }
-      let imgList = this.srcs.map(img => {
-        return img.file
-      });
+      removeTarget = this.imgs[index]
+      let imgList = this.imgs
       let data = {
         index: index,
         removeTarget: removeTarget,

@@ -23,8 +23,21 @@
 export default {
   data() {
     return {
-      // imgs: []
-      imgs: ['https://farm4.staticflickr.com/3894/15008518202_b016d7d289_b.jpg','https://farm6.staticflickr.com/5584/14985868676_4b802b932a_b.jpg','https://farm4.staticflickr.com/3920/15008465772_383e697089_b.jpg']
+      imgs: [
+        {
+          src: 'https://farm4.staticflickr.com/3894/15008518202_b016d7d289_b.jpg',
+          author: 'Folkert Gorter',
+          desc: 'This is dummy caption.'
+        },
+        {
+          src: 'https://farm6.staticflickr.com/5584/14985868676_4b802b932a_b.jpg'
+        },
+        {
+          src: 'https://farm4.staticflickr.com/3920/15008465772_383e697089_b.jpg',
+          author: 'Folkert Gorter2',
+          desc: 'It\'s a dummy caption. He who searches for meaning here will be sorely disappointed.'
+        }
+      ]
     }
   },
   methods: {
