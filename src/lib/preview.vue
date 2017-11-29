@@ -139,8 +139,8 @@ export default {
       }
       this.srcs = srcs
     },
-    __dispatch (name, fileList, target, index) {
-      this.$emit && this.$emit(name, fileList, target, index)
+    __dispatch (name, index, fileList, target) {
+      this.$emit && this.$emit(name, index, fileList, target)
     },
     closePic () {
       this.__dispatch("onClose")
@@ -159,7 +159,7 @@ export default {
         removeTarget: removeTarget,
         fileList: imgList
       };
-      this.__dispatch("onRemove", data.fileList, data.removeTarget, data.index)
+      this.__dispatch("onRemove",data.index, data.fileList, data.removeTarget)
     }
   }
 }

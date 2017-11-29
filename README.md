@@ -57,7 +57,7 @@ export default {
     closeHandler () {
       console.log('cloooooose')
     },
-    handleRemove (fileList, index) {
+    handleRemove (index, fileList, target) {
       this.imgs = data.fileList
     }
   }

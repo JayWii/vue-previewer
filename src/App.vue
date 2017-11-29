@@ -50,9 +50,9 @@ export default {
       }
       this.imgs.push(obj)
     },
-    handleRemove (fileList, index) {
-      console.log(fileList, index)
-      // this.imgs.splice(data.index, 1)
+    handleRemove (index, fileList, target) {
+      console.log(index, fileList, target)
+      // this.imgs.splice(index, 1)
       this.imgs = fileList
     }
   }
