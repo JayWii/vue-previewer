@@ -45,10 +45,10 @@ export default {
       console.log('cloooooose')
     },
     addImg () {
-      this.imgs.push('https://farm4.staticflickr.com/3894/15008518202_b016d7d289_b.jpg')
-    },
-    addFile () {
-      this.imgs.push(this.$refs.file.files[0])
+      let obj = {
+        src: 'https://farm6.staticflickr.com/5584/14985868676_4b802b932a_b.jpg'
+      }
+      this.imgs.push(obj)
     },
     handleRemove (fileList, index) {
       console.log(fileList, index)
