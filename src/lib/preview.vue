@@ -46,6 +46,10 @@ export default {
       type: [Number],
       default: 10
     },
+    srcName: {
+      type: [String],
+      default: 'src'
+    },
     radius: {
       type: [Number],
       default: 5
@@ -130,12 +134,12 @@ export default {
                   srcs[i].src = e.target.result
                 }
               }(i)
-              fr.readAsDataURL(files[i].src)
+              fr.readAsDataURL(files[i][this.srcName])
             }
           }
         } else {
           for (var i = 0; i < this.imgs.length; i++) {
-            srcs[i].src = this.imgs[i].src
+            srcs[i].src = this.imgs[i][this.srcName]
           }
         }
         this.srcs = srcs

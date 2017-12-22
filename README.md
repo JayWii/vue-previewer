@@ -103,6 +103,10 @@ export default {
     - **type**: String
     - **required** : false
     - **default** : 'url'
+10. **srcName** - 传入的链接字段名
+    - **type**: String
+    - **required** : false
+    - **default** : 'src'
 
 
 ### callBack
