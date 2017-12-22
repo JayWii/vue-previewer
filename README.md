@@ -58,7 +58,7 @@ export default {
       console.log('cloooooose')
     },
     handleRemove (index, fileList, target) {
-      this.imgs = data.fileList
+      this.imgs = fileList
     }
   }
 }
