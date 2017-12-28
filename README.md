@@ -31,9 +31,11 @@ Vue.use(VuePreviewer)
     <!--一般使用 -->
     <vue-previewer :imgs="imgs" @onRemove="handleRemove" @onClose="closeHandler"></vue-previewer>
     <!--slot引入图片上传元素 -->
-<!--<vue-previewer :imgs="imgs" @onRemove="handleRemove" @onClose="closeHandler">
+    <!--
+    <vue-previewer :imgs="imgs" @onRemove="handleRemove" @onClose="closeHandler">
         <div slot="uploader">图片上传元素或其他任意你想插入到图片list尾部的元素</div>
-    </vue-previewer> -->
+    </vue-previewer> 
+    -->
   </div>
 </template>
 
