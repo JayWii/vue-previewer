@@ -17,6 +17,7 @@
           <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNTEwMjg0NjI5OTMxIiBjbGFzcz0iaWNvbiIgc3R5bGU9IiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjE4NjUiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzIiIGhlaWdodD0iMzIiPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PC9zdHlsZT48L2RlZnM+PHBhdGggZD0iTTI0MCAxODAgMTgwIDI0MCA0NTIgNTEyIDE4MCA3ODQgMjQwIDg0NCA1MTIgNTcyIDc4NCA4NDQgODQ0IDc4NCA1NzIgNTEyIDg0NCAyNDAgNzg0IDE4MCA1MTIgNDUyIDI0MCAxODB6IiBwLWlkPSIxODY2IiBmaWxsPSIjZmZmZmZmIj48L3BhdGg+PC9zdmc+" alt="delete">
         </div>
       </li>
+      <li class="preview-item"><slot name="uploader"></slot></li>
     </ul>
     
     <!-- 大图预览 -->
