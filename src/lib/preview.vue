@@ -21,7 +21,7 @@
     </ul>
     
     <!-- 大图预览 -->
-    <img-previewer :list="srcs" selector=".preview-img" :options="options" @on-close="closePic" ref="previewer"></img-previewer>
+    <img-previewer :list="srcs" selector=".preview-img" :options="Options" @on-close="closePic" ref="previewer"></img-previewer>
 
   </div>
 </template>
@@ -74,17 +74,26 @@ export default {
     type: {
       type: [String],
       default: 'url' // url则imgs的值为图片链接，file则imgs的值为图片文件
+    },
+    options: {
+      type: Object,
+      default: () => {}
     }
   },
   data() {
     return {
       srcs: [],
-      options: {
+      Options: {
         shareEl: false,
         closeEl: true,
         fullscreenEl: false
       },
       index: null
+    }
+  },
+  created() {
+    for (let k in this.options) {
+      this.Options[k] = this.options[k]
     }
   },
   mounted() {
