@@ -8,6 +8,7 @@
       :radius="5"
       :removeInside="true"
       :removeEnable="true"
+      :options="{bgOpacity: 0.85}"
       deleteBtnColor="#e12e2e"
       previewBtnColor="#3caaff"
       type="url" 
